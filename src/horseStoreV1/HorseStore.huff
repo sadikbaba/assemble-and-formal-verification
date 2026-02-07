@@ -1,3 +1,17 @@
 
 
-#define macro MAIN() = takes(0) returns(0) {}
+#define macro MAIN() = takes(0) returns(0) {
+ //   0x00              push0          // load [0] to stack
+ //   calldataload         // load  [calldata]
+//      0xe0              push1
+// shr                        >>   shift right 
+    0x0 calldataload 0xe0 shr   // [function selector]
+
+
+     0xcdfead2e                    //       [function_selector]
+
+     eq                            //        [equal]
+
+
+     0xe026c017                     //      [function_selector]
+}
